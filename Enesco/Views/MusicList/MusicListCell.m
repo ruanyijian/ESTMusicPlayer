@@ -40,4 +40,8 @@
     self.musicNumberLabel.hidden = (state != NAKPlaybackIndicatorViewStateStopped);
 }
 
+
+
+
+
 @end

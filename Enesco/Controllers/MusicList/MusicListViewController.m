@@ -12,6 +12,7 @@
 #import "MusicIndicator.h"
 #import "MBProgressHUD.h"
 
+
 @interface MusicListViewController () <MusicViewControllerDelegate, MusicListCellDelegate>
 @property (nonatomic, strong) NSMutableArray *musicEntities;
 @property (nonatomic, assign) NSInteger currentIndex;
@@ -24,7 +25,11 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.navigationItem.title = @"Music List";
     [self headerRefreshing];
+    
+    
+    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -34,6 +39,17 @@
 # pragma mark - Custom right bar button item
 
 - (void)createIndicatorView {
+    
+    UIImageView *imageView=[[UIImageView alloc]initWithFrame:self.view.bounds];
+    imageView.image=[UIImage imageNamed:@"FlyElephant"];
+    [self.view insertSubview:imageView atIndex:0];
+    
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"image"ofType:@"jpg"];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    self.view.layer.contents = (id)image.CGImage;
+    
+
+    
     MusicIndicator *indicator = [MusicIndicator sharedInstance];
     indicator.hidesWhenStopped = NO;
     indicator.tintColor = [UIColor redColor];
@@ -162,5 +178,7 @@
      hud.removeFromSuperViewOnHide = YES;
      [hud hide:YES afterDelay:2];
 }
+
+
 
 @end
