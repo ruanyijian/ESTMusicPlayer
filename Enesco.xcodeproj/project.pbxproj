@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27863B02222E9A5500DF94C3 /* MusicList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5643E1B51C0C3608005D1A1C /* MusicList.storyboard */; };
-		27863B082230152F00DF94C3 /* blurredBGW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27863B072230152E00DF94C3 /* blurredBGW@2x.png */; };
+		27FA4409223019DE00CFE674 /* blurredBGW@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA4408223019DE00CFE674 /* blurredBGW@2x.png */; };
 		5643E1501C0C2AEA005D1A1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5643E14F1C0C2AEA005D1A1C /* main.m */; };
 		5643E1531C0C2AEA005D1A1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5643E1521C0C2AEA005D1A1C /* AppDelegate.m */; };
 		5643E15B1C0C2AEA005D1A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5643E15A1C0C2AEA005D1A1C /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27863B072230152E00DF94C3 /* blurredBGW@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blurredBGW@2x.png"; path = "Enesco/Assets.xcassets/blurredBGW@2x.png"; sourceTree = SOURCE_ROOT; };
+		27FA4408223019DE00CFE674 /* blurredBGW@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blurredBGW@2x.png"; path = "../../../../../Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/4f18ac56901004202be4ed85e399b96c/Message/MessageTemp/b31612c7cb2de1ba22c5c0332bf27167/File/blurredBGW@2x.png"; sourceTree = "<group>"; };
 		5643E14B1C0C2AEA005D1A1C /* Enesco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enesco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5643E14F1C0C2AEA005D1A1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5643E1511C0C2AEA005D1A1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		5643E1821C0C2B34005D1A1C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				27863B072230152E00DF94C3 /* blurredBGW@2x.png */,
+				27FA4408223019DE00CFE674 /* blurredBGW@2x.png */,
 				5643E15A1C0C2AEA005D1A1C /* Assets.xcassets */,
 				56C1B9331C425A7900990D01 /* Musics */,
 			);
@@ -519,11 +519,11 @@
 			files = (
 				27863B02222E9A5500DF94C3 /* MusicList.storyboard in Resources */,
 				56C1B9421C425A7900990D01 /* 1771694697_4194836_l.mp3 in Resources */,
-				27863B082230152F00DF94C3 /* blurredBGW@2x.png in Resources */,
 				56DBB02B1C116A280089EC56 /* music_list.json in Resources */,
 				5643E1AC1C0C35CC005D1A1C /* Music.storyboard in Resources */,
 				56C1B9401C425A7900990D01 /* 1770040300_2031329_l.mp3 in Resources */,
 				5643E15B1C0C2AEA005D1A1C /* Assets.xcassets in Resources */,
+				27FA4409223019DE00CFE674 /* blurredBGW@2x.png in Resources */,
 				56C1B9411C425A7900990D01 /* 1770059653_2050944_l.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

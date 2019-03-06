@@ -39,6 +39,10 @@
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:
                                      [UIImage imageNamed:@"blurredBGW@2x.png"]];
     
+    UIImage *image = [UIImage imageNamed:@"blurredBGW"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    self.tableView.backgroundView = imageView;
+    
     
     MusicIndicator *indicator = [MusicIndicator sharedInstance];
     indicator.hidesWhenStopped = NO;
@@ -147,6 +151,8 @@
     static NSString *musicListCell = @"musicListCell";
     MusicEntity *music = _musicEntities[indexPath.row];
     MusicListCell *cell = [tableView dequeueReusableCellWithIdentifier:musicListCell];
+    //cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.musicNumber = indexPath.row + 1;
     cell.musicEntity = music;
     cell.delegate = self;
