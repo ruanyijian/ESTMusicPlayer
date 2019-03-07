@@ -36,10 +36,10 @@
 
 - (void)createIndicatorView {
     
-    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:
-                                     [UIImage imageNamed:@"blurredBGW@2x.png"]];
+    /*self.tableView.backgroundView = [[UIImageView alloc] initWithImage:
+                                     [UIImage imageNamed:@"blurredBGW@2x.png"]];*/
     
-    UIImage *image = [UIImage imageNamed:@"blurredBGW"];
+    UIImage *image = [UIImage imageNamed:@"bgIMG"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     self.tableView.backgroundView = imageView;
     
