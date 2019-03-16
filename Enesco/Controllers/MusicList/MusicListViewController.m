@@ -6,13 +6,18 @@
 //  Copyright © 2015 The EST Group. All rights reserved.
 //
 
+
 #import "MusicListViewController.h"
 #import "MusicViewController.h"
 #import "MusicListCell.h"
 #import "MusicIndicator.h"
 #import "MBProgressHUD.h"
 
+
 @interface MusicListViewController () <MusicViewControllerDelegate, MusicListCellDelegate>
+
+@property (strong, nonatomic) UIImagePickerController *picker;
+
 @property (nonatomic, strong) NSMutableArray *musicEntities;
 @property (nonatomic, assign) NSInteger currentIndex;
 @end
@@ -39,9 +44,16 @@
     /*self.tableView.backgroundView = [[UIImageView alloc] initWithImage:
                                      [UIImage imageNamed:@"blurredBGW@2x.png"]];*/
     
-    UIImage *image = [UIImage imageNamed:@"bgIMG"];
+   /*我加的动态button*/
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@("换肤")
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:@selector(onLeftTouched:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+    /*UIImage *image = [UIImage imageNamed:@"bgIMG"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    self.tableView.backgroundView = imageView;
+    self.tableView.backgroundView = imageView;*/
     
     
     MusicIndicator *indicator = [MusicIndicator sharedInstance];
@@ -71,6 +83,39 @@
     musicVC.dontReloadMusic = YES;
     [self presentToMusicViewWithMusicVC:musicVC];
 }
+
+/*按钮方法实现调取相册*/
+- (void)onLeftTouched:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+    
+    UIImage *image = [UIImage imageNamed:@"imagePicker.jpg"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    self.tableView.backgroundView = imageView;
+}
+//实现在相册里选择相册返回
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([type isEqualToString:@"public.image"]) {
+        NSString *key = nil;
+        if (picker.allowsEditing) {
+            key = UIImagePickerControllerEditedImage;
+        } else {
+            key = UIImagePickerControllerOriginalImage;
+        }
+        
+        UIImage *image = [info objectForKey:key];
+        //[self.scanTool scanImageQRCode:image];
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        
+        //UIImage *image = [UIImage imageNamed:@"imagePicker.jpg"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        self.tableView.backgroundView = imageView;
+    }
+}
+
 
 # pragma mark - Load data from server
 
